@@ -29,7 +29,7 @@ export default {
         },
         body: JSON.stringify({
           from: "Mailer <onboarding@resend.dev>",
-          to: body.to,
+          to: [env.DEFAULT_EMAIL_RECEIPIENT, body.to],
           subject: body.subject || "No Subject",
           html: body.html || "<p>No content provided</p>",
         }),
